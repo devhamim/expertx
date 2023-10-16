@@ -30,13 +30,13 @@
                                     <div class="col-md-3">
                                         <div class="admin-profile">
                                             <div class="image-wrap">
-                                                <div class="part-img rounded-circle overflow-hidden">
-                                                    <img src="dashboad/assets/images/admin.png" alt="admin">
+                                                <div class="part-img  overflow-hidden">
+                                                    <img src="{{ asset('uploads/setting') }}/{{ $settings->first()->logo }}" alt="Logo">
                                                 </div>
-                                                <button class="image-change"><i class="fa-light fa-camera"></i></button>
+                                                <button class="image-change"><img src="{{ asset('uploads/setting') }}/{{ $settings->first()->favicon }}" alt=""></button>
                                             </div>
-                                            <span class="admin-name">Mitchell C. Shay</span>
-                                            <span class="admin-role">Graphic Designer</span>
+                                            <span class="admin-name">{{ $settings->first()->name }}</span>
+                                            <span class="admin-role">{{ $settings->first()->title }}</span>
                                         </div>
                                     </div>
                                     <div class="col-md-9">
@@ -45,19 +45,19 @@
                                                 <label for="" class="form-label">Website Name</label>
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="fa-light fa-user"></i></span>
-                                                    <input type="text" class="form-control" name="name" placeholder="Website Name" value="">
+                                                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Website Name" value="{{ $settings->first()->name }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <label for="" class="form-label">Website Email</label>
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="fa-light fa-at"></i></span>
-                                                    <input type="email" class="form-control" name="email" placeholder="Email" value="">
+                                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email" value="{{ $settings->first()->email }}">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <label for="" class="form-label">Website About</label>
-                                                <textarea class="form-control h-150-p" name="about" placeholder="about"></textarea>
+                                                <textarea class="form-control h-150-p" name="about" placeholder="about">{{ $settings->first()->about }}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -68,25 +68,32 @@
                             </div>
                             <div class="private-information mb-30">
                                 <div class="row g-3">
-                                    <div class="col-md-4 col-sm-6">
+                                    <div class="col-md-3 col-sm-6">
                                         <label for="" class="form-label">Website Number</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fa-light fa-user"></i></span>
-                                            <input type="text" class="form-control" name="number" placeholder="Number" value="">
+                                            <input type="text" class="form-control" name="number" placeholder="Number" value="{{ $settings->first()->number }}">
                                         </div>
                                     </div>
-                                    <div class="col-md-4 col-sm-6">
+                                    <div class="col-md-3 col-sm-6">
                                         <label for="" class="form-label">Logo</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fa-light fa-user"></i></span>
-                                            <input type="file" class="form-control" name="logo" placeholder="Logo" value="">
+                                            <input type="file" class="form-control" name="logo" placeholder="Logo" value="{{ $settings->first()->logo }}">
                                         </div>
                                     </div>
-                                    <div class="col-md-4 col-sm-6">
+                                    <div class="col-md-3 col-sm-6">
+                                        <label for="" class="form-label">Footer Logo</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa-light fa-user"></i></span>
+                                            <input type="file" class="form-control" name="footer_logo" placeholder="Footer Logo" value="{{ $settings->first()->logo }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6">
                                         <label for="" class="form-label">Favicon</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fa-light fa-user"></i></span>
-                                            <input type="file" class="form-control" name="favicon" placeholder="Favicon" value="">
+                                            <input type="file" class="form-control" name="favicon" placeholder="Favicon" value="{{ $settings->first()->favicon }}">
                                         </div>
                                     </div>
                                    
@@ -94,21 +101,21 @@
                                         <label for="" class="form-label">Address</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fa-light fa-envelope"></i></span>
-                                            <input type="text" class="form-control" name="address" placeholder="Address" value="">
+                                            <input type="text" class="form-control @error('address') is-invalid @enderror" name="address" placeholder="Address" value="{{ $settings->first()->address }}">
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-6">
                                         <label for="" class="form-label">Footer</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fa-light fa-phone"></i></span>
-                                            <input type="text" class="form-control" name="footer" placeholder="Footer" value="">
+                                            <input type="text" class="form-control @error('footer') is-invalid @enderror" name="footer" placeholder="Footer" value="{{ $settings->first()->footer }}">
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-6">
                                         <label for="" class="form-label">Title</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fa-light fa-globe"></i></span>
-                                            <input type="text" class="form-control" name="title" placeholder="Title" value="">
+                                            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" placeholder="Title" value="{{ $settings->first()->title }}">
                                         </div>
                                     </div>
                                 </div>
@@ -122,21 +129,21 @@
                                         <label for="" class="form-label">Meta Title</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fa-light fa-globe"></i></span>
-                                            <input type="text" class="form-control" name="meta_title" placeholder="Meta Title" value="">
+                                            <input type="text" class="form-control" name="meta_title" placeholder="Meta Title" value="{{ $settings->first()->meta_title }}">
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-6">
                                         <label for="" class="form-label">Meta Tag</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fa-light fa-globe"></i></span>
-                                            <input type="text" class="form-control" name="meta_tag" placeholder="Meta Tag" value="">
+                                            <input type="text" class="form-control" name="meta_tag" placeholder="Meta Tag" value="{{ $settings->first()->meta_tag }}">
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-6">
                                         <label for="" class="form-label">Meta Description</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fa-light fa-globe"></i></span>
-                                            <input type="text" class="form-control" name="meta_description" placeholder="Meta Description" value="">
+                                            <input type="text" class="form-control" name="meta_description" placeholder="Meta Description" value="{{ $settings->first()->meta_description }}">
                                         </div>
                                     </div>
                                 </div>
@@ -150,37 +157,37 @@
                                     <div class="col-sm-6">
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fa-brands fa-facebook-f"></i></span>
-                                            <input type="url" class="form-control" name="facebook" placeholder="Facebook" value="">
+                                            <input type="url" class="form-control" name="facebook" placeholder="Facebook" value="{{ $settings->first()->facebook }}">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fa-brands fa-twitter"></i></span>
-                                            <input type="url" class="form-control" name="twitter" placeholder="Twitter" value="">
+                                            <input type="url" class="form-control" name="twitter" placeholder="Twitter" value="{{ $settings->first()->twitter }}">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fa-brands fa-linkedin-in"></i></span>
-                                            <input type="url" class="form-control" name="linkedin" placeholder="Linkedin" value="">
+                                            <input type="url" class="form-control" name="linkedin" placeholder="Linkedin" value="{{ $settings->first()->linkedin }}">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fa-brands fa-instagram"></i></span>
-                                            <input type="url" class="form-control" name="instagram" placeholder="Instagram" value="">
+                                            <input type="url" class="form-control" name="instagram" placeholder="Instagram" value="{{ $settings->first()->instagram }}">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fa-brands fa-youtube"></i></span>
-                                            <input type="url" class="form-control" name="youtube" placeholder="Youtube" value="">
+                                            <input type="url" class="form-control" name="youtube" placeholder="Youtube" value="{{ $settings->first()->youtube }}">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fa-brands fa-pinterest-p"></i></span>
-                                            <input type="url" class="form-control" name="pinterest" placeholder="Pinterest" value="">
+                                            <input type="url" class="form-control" name="pinterest" placeholder="Pinterest" value="{{ $settings->first()->pinterest }}">
                                         </div>
                                     </div>
                                     <div class="col-12">

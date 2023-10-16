@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('about')->nullable();
             $table->string('number')->nullable();
             $table->string('logo')->nullable();
+            $table->string('footer_logo')->nullable();
             $table->string('favicon')->nullable();
             $table->string('address')->nullable();
             $table->string('footer');

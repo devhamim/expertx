@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\setting;
 use Illuminate\Http\Request;
 use Photo;
+use Image;
+use Str;
 
 class SettingController extends Controller
 {
@@ -62,6 +64,7 @@ class SettingController extends Controller
             'about'=>'required|max:255',
             'number'=>'',
             'logo'=>'',
+            'footer_logo'=>'',
             'favicon'=>'',
             'address'=>'',
             'footer'=>'required|max:255',
@@ -83,13 +86,27 @@ class SettingController extends Controller
        
         $validatesData = $request->validate($rules);
 
-        if ($request->logo != '') {
 
-            // print_r($request->logo);
-            // die();
-            Photo::upload($request->logo, 'uploads/setting/', 'SETTING');
-            dd(Photo::$name);
-            $validatedData['logo'] = Photo::$name;
+        if ($request->hasFile('logo')) {
+            $image = $request->file('logo');
+            $extension = $image->getClientOriginalExtension();
+            $file_name = Str::random(5) . rand(1000, 999999) . '.' . $extension;
+            $image->move(public_path('uploads/setting'), $file_name);
+            $validatesData['logo'] = $file_name;
+        }
+        if ($request->hasFile('footer_logo')) {
+            $image = $request->file('footer_logo');
+            $extension = $image->getClientOriginalExtension();
+            $file_name = Str::random(5) . rand(1000, 999999) . '.' . $extension;
+            $image->move(public_path('uploads/setting'), $file_name);
+            $validatesData['footer_logo'] = $file_name;
+        }
+        if ($request->hasFile('favicon')) {
+            $image = $request->file('favicon');
+            $extension = $image->getClientOriginalExtension();
+            $file_name = Str::random(5) . rand(1000, 999999) . '.' . $extension;
+            $image->move(public_path('uploads/setting'), $file_name);
+            $validatesData['favicon'] = $file_name;
         }
 
 

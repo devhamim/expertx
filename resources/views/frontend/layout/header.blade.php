@@ -26,7 +26,7 @@
     <nav class="navbar navbar-expand-lg bsnav bsnav-sticky bsnav-sticky-slide top-menu home-three-menu">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img style="max-width: 150px" src="{{ asset('frontend') }}/img/logo.png" alt="">
+                <img style="max-width: 150px" src="{{ asset('uploads/setting') }}/{{ $setting->first()->logo }}" alt="">
             </a>
             <button class="navbar-toggler toggler-spring"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse justify-content-md-end">

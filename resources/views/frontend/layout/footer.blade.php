@@ -7,9 +7,8 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-6 footer-col">
                         <div class="footer-content-item">
-                            <img style="max-width: 150px" class="mb-5" src="{{ asset('frontend') }}/img/logo.png" alt=""></a>
-                            <p>Holisticly empower premium arch itectures wit hout value-addeid a ideas. Seamlessly evolve cross-pl atform experiences and open-so meta-services.
-                            </p>
+                            <img style="max-width: 150px" class="mb-5" src="{{ asset('uploads/setting') }}/{{ $setting->first()->footer_logo }}" alt=""></a>
+                            <p>{{ $setting->first()->about }}</p>
                             <ul>
                                 <li><a href="#"> Privacy policy </a></li>
                                 <li><a href="#">Terms and Conditions</a></li>
