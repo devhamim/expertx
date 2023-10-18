@@ -3,25 +3,25 @@
         <div class="col-xxl-6 col-xl-5 col-4 d-flex align-items-center gap-20">
             <div class="main-logo d-lg-block d-none">
                 <div class="logo-big">
-                    <a href="dashboard-index.html">
-                        <img src="{{ asset('backend') }}/assets/images/logo-black.png" alt="Logo">
+                    <a href="{{ route('index') }}">
+                        <img src="{{ asset('uploads/setting') }}/{{ $setting->first()->logo }}" alt="Logo">
                     </a>
                 </div>
                 <div class="logo-small">
-                    <a href="dashboard-index.html">
-                        <img src="{{ asset('backend') }}/assets/images/logo-small.png" alt="Logo">
+                    <a href="{{ route('index') }}">
+                        <img src="{{ asset('uploads/setting') }}/{{ $setting->first()->logo }}" alt="Logo">
                     </a>
                 </div>
             </div>
             <div class="nav-close-btn">
                 <button id="navClose"><i class="fa-light fa-bars-sort"></i></button>
             </div>
-            <a href="#" target="_blank" class="btn btn-sm btn-primary site-view-btn"><i class="fa-light fa-globe me-1"></i> <span>View Website</span></a>
+            <a href="{{ url('/') }}" target="_blank" class="btn btn-sm btn-primary site-view-btn"><i class="fa-light fa-globe me-1"></i> <span>View Website</span></a>
         </div>
         <div class="col-4 d-lg-none">
             <div class="mobile-logo">
-                <a href="dashboard-index.html">
-                    <img src="{{ asset('backend') }}/assets/images/logo-black.png" alt="Logo">
+                <a href="{{ route('index') }}">
+                    <img src="{{ asset('uploads/setting') }}/{{ $setting->first()->logo }}" alt="Logo">
                 </a>
             </div>
         </div>
@@ -34,14 +34,7 @@
                             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
                         <div class="header-right-btns d-flex justify-content-end align-items-center p-0">
-                            <div class="lang-select">
-                                <span>Language:</span>
-                                <select>
-                                    <option value="">EN</option>
-                                    <option value="">BN</option>
-                                    <option value="">FR</option>
-                                </select>
-                            </div>
+                            
                             <div class="header-btn-box">
                                 <button class="header-btn" id="messageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa-light fa-comment-dots"></i>

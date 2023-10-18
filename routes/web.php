@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SettingController;
@@ -34,4 +35,5 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('index');
         Route::resources([
             'setting'      => SettingController::class,
+            'feature'      => FeatureController::class,
         ]);
