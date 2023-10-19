@@ -2,33 +2,45 @@
 
 @section('content')
 <div class="dashboard-breadcrumb mb-30">
-    <h2>Feature</h2>
+    <h2>Team</h2>
 </div>
 <div class="row g-4">
     <div class="col-xxl-4 col-md-5">
         <div class="panel">
             <div class="panel-header">
-                <h5>Add New Feature</h5>
+                <h5>Add New Team</h5>
             </div>
             <div class="panel-body">
-                <form action="{{ route('feature.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('team.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                     <div class="row g-3">
                         <div class="col-12">
-                            <label class="form-label">Feature Name</label>
-                            <input type="text" name="name" class="form-control form-control-sm @error('name') is-invalid @enderror" >
+                            <label class="form-label">Name</label>
+                            <input type="text" name="name" class="form-control form-control-sm @error('name') is-invalid @enderror">
                         </div>
-                        <div class="col-sm-6">
-                            <label class="form-label">Feature Icon</label>
-                            <input type="file" name="icon" class="form-control form-control-sm @error('icon') is-invalid @enderror">
+                        <div class="col-12">
+                            <label class="form-label">Position</label>
+                            <input type="text" name="post" class="form-control form-control-sm @error('post') is-invalid @enderror">
                         </div>
-                        <div class="col-sm-6">
-                            <label class="form-label">Feature Image</label>
+                        <div class="col-12">
+                            <label class="form-label">Image</label>
                             <input type="file" name="image" class="form-control form-control-sm @error('image') is-invalid @enderror">
                         </div>
                         <div class="col-12">
-                            <label class="form-label">Description</label>
-                            <textarea rows="5" name="description" class="form-control form-control-sm"></textarea>
+                            <label class="form-label">Facebook</label>
+                            <input type="text" name="facebook" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Instagram</label>
+                            <input type="text" name="instagram" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">LinkedIn</label>
+                            <input type="text" name="linkedin" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">GitHub</label>
+                            <input type="text" name="github" class="form-control form-control-sm">
                         </div>
                         <div class="col-12 d-flex justify-content-end">
                             <div class="btn-box">
@@ -70,29 +82,34 @@
                                     <input class="form-check-input" type="checkbox" id="markAllProduct">
                                 </div>
                             </th>
-                            <th>Image</th>
-                            <th>Description</th>
+                            <th>Position</th>
+                            <th>Social</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($features as $feature)
+                        @foreach ($teams as $team)
                             <tr>
                                 <td>
                                     <div class="table-category-card">
                                         <div class="part-icon">
-                                            <span><img src="{{ asset('uploads/feature') }}/{{ $feature->icon }}" alt=""></span>
+                                            <span><img src="{{ asset('uploads/team') }}/{{ $team->image }}" alt=""></span>
                                         </div>
                                         <div class="part-txt">
-                                            <span class="category-name">{{ $feature->name }}</span>
+                                            <span class="category-name">{{ $team->name }}</span>
                                         </div>
                                     </div>
                                 </td>
-                                <td><img width="80px" src="{{ asset('uploads/feature') }}/{{ $feature->image }}" alt=""></td>
-                                <td><span class="table-dscr">{{ $feature->description }}</span></td>
+                                <td><span class="table-dscr">{{ $team->post }}</span></td>
                                 <td>
-                                    @if ($feature->status == 1)
+                                    <span class="table-dscr">{{ $team->facebook }}</span><br>
+                                    <span class="table-dscr">{{ $team->instagram }}</span><br>
+                                    <span class="table-dscr">{{ $team->linkedin }}</span><br>
+                                    <span class="table-dscr">{{ $team->github }}</span><br>
+                                </td>
+                                <td>
+                                    @if ($team->status == 1)
                                         <span class="table-dscr text-success">Active</span>
                                     @else
                                         <span class="table-dscr text-warning">Deactive</span>
@@ -100,8 +117,8 @@
                                 </td>
                                 <td>
                                     <div class="btn-box">
-                                        <a href="{{ route('feature.edit', $feature->id) }}"><i class="fa-light fa-pen-to-square"></i></a>
-                                        <form action="{{ route('feature.destroy',  $feature->id) }}" method="POST">
+                                        <a href="{{ route('team.edit', $team->id) }}"><i class="fa-light fa-pen-to-square"></i></a>
+                                        <form action="{{ route('team.destroy',  $team->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class=" border-0 mr-2">

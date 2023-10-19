@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CustomerSayController;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 
 // frontend
 Route::get('/', [FrontendController::class, 'home']);
-Route::get('/about', [FrontendController::class, 'about'])->name('about');
+Route::get('/about-us', [FrontendController::class, 'about_us'])->name('about_us');
 Route::get('/services', [FrontendController::class, 'services'])->name('services');
 Route::get('/protfolio', [FrontendController::class, 'protfolio'])->name('protfolio');
 Route::get('/blog', [FrontendController::class, 'blog'])->name('blog');
@@ -36,4 +39,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('index');
         Route::resources([
             'setting'      => SettingController::class,
             'feature'      => FeatureController::class,
+            'about'        => AboutController::class,
+            'team'         => TeamController::class,
+            'customerSay'         => CustomerSayController::class,
         ]);

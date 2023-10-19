@@ -18,13 +18,13 @@
                         <a href="{{ route('feature.index') }}" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-plus-square"></i></span> <span class="sidebar-txt">Feature</span></a>
                     </li>
                     <li class="sidebar-dropdown-item">
-                        <a href="dashboard-all-product.html" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-boxes"></i></span> <span class="sidebar-txt">All Product</span></a>
+                        <a href="{{ route('about.index') }}" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-boxes"></i></span> <span class="sidebar-txt">About</span></a>
                     </li>
                     <li class="sidebar-dropdown-item">
-                        <a href="dashboard-category.html" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-tag"></i></span> <span class="sidebar-txt">Category</span></a>
+                        <a href="{{ route('team.index') }}" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-tag"></i></span> <span class="sidebar-txt">Team</span></a>
                     </li>
                     <li class="sidebar-dropdown-item">
-                        <a href="dashboard-order.html" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-cart-shopping-fast"></i></span> <span class="sidebar-txt">Order</span></a>
+                        <a href="{{ route('customerSay.index') }}" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-cart-shopping-fast"></i></span> <span class="sidebar-txt">Customer Say</span></a>
                     </li>
                     <li class="sidebar-dropdown-item">
                         <a href="dashboard-calendar.html" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-calendar"></i></span> <span class="sidebar-txt">Calendar</span></a>

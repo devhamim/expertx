@@ -11,8 +11,8 @@ class FrontendController extends Controller
         return view('frontend.home');
     }
     
-    //about
-    function about(){
+    //about_us
+    function about_us(){
         return view('frontend.about');
     }
     //services

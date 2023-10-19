@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{{ asset('backend') }}/assets/vendor/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('backend') }}/assets/css/style.css">
     <link rel="stylesheet" id="primaryColor" href="{{ asset('backend') }}/assets/css/orange-color.css">
+    {{-- summer note --}}
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <link rel="stylesheet" id="rtlStyle" href="#">
 </head>
 <body class="body-padding body-p-top light-theme">
@@ -47,7 +49,15 @@
     <script src="{{ asset('backend') }}/assets/vendor/js/moment.min.js"></script>
     <script src="{{ asset('backend') }}/assets/vendor/js/daterangepicker.js"></script>
     <script src="{{ asset('backend') }}/assets/vendor/js/bootstrap.bundle.min.js"></script>
+    {{-- summer note --}}
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     <script src="{{ asset('backend') }}/assets/js/dashboard.js"></script>
     <script src="{{ asset('backend') }}/assets/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote();
+        });
+    </script>
 </body>
 </html>

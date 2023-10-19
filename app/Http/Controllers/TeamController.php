@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\feature;
+use App\Models\team;
 use Illuminate\Http\Request;
 use Str;
 
-class FeatureController extends Controller
+class TeamController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $features = feature::all();
-        return view('backend.feature.index', [
-            'features'=>$features,
+        $teams = team::all();
+        return view('backend.team.index', [
+            'teams'=>$teams,
         ]);
     }
 
@@ -30,33 +30,29 @@ class FeatureController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, feature $feature)
+    public function store(Request $request)
     {
         $rules = [
             'name'=>'required',
-            'icon'=>'',
+            'post'=>'required',
             'image'=>'',
-            'description'=>'',
+            'facebook'=>'',
+            'instagram'=>'',
+            'linkedin'=>'',
+            'github'=>'',
         ];
 
         $validatesData = $request->validate($rules);
 
-        if($request->hasFile('icon')){
-            $image = $request->file('icon');
-            $extension = $image->getClientOriginalExtension();
-            $file_name = Str::random(5) . rand(1000, 999999) . '.' . $extension;
-            $image->move(public_path('uploads/feature'), $file_name);
-            $validatesData['icon'] = $file_name;
-        }
         if($request->hasFile('image')){
             $image = $request->file('image');
             $extension = $image->getClientOriginalExtension();
-            $file_name = Str::random(5) . rand(1000, 999999) . '.' . $extension;
-            $image->move(public_path('uploads/feature'), $file_name);
-            $validatesData['image'] = $file_name;
+            $file_name = Str::random(5). rand(1000, 999999). '.'.$extension;
+            $image->move(public_path('uploads/team'), $file_name);
+            $validatesData['image'] = $file_name; 
         }
 
-        feature::create($validatesData);
+        team::create($validatesData);
         toast('Add Success','success');   
         return back();
     }
@@ -74,9 +70,9 @@ class FeatureController extends Controller
      */
     public function edit(string $id)
     {
-        $features = feature::find($id);
-        return view('backend.feature.edit', [
-            'features'=>$features,
+        $teams = team::find($id);
+        return view('backend.team.edit', [
+            'teams'=>$teams,
         ]);
     }
 
@@ -87,33 +83,28 @@ class FeatureController extends Controller
     {
         $rules = [
             'name'=>'required',
-            'icon'=>'',
+            'post'=>'required',
             'image'=>'',
-            'description'=>'',
+            'facebook'=>'',
+            'instagram'=>'',
+            'linkedin'=>'',
+            'github'=>'',
             'status'=>'',
         ];
 
         $validatesData = $request->validate($rules);
 
-        if($request->hasFile('icon')){
-            $image = $request->file('icon');
-            $extension = $image->getClientOriginalExtension();
-            $file_name = Str::random(5). rand(1000, 999999) .'.'.$extension;
-            $image->move(public_path('uploads/feature'), $file_name);
-            $validatesData['icon'] = $file_name;
-        }
-
         if($request->hasFile('image')){
             $image = $request->file('image');
             $extension = $image->getClientOriginalExtension();
             $file_name = Str::random(5). rand(1000, 999999). '.'.$extension;
-            $image->move(public_path('uploads/feature'), $file_name);
+            $image->move(public_path('uploads/team'), $file_name);
             $validatesData['image'] = $file_name; 
         }
 
-        feature::where('id', $id)->update($validatesData);
+        team::where('id', $id)->update($validatesData);
         toast('Update Success','success');   
-        return redirect()->route('feature.index');
+        return redirect()->route('team.index');
     }
 
     /**
@@ -121,7 +112,7 @@ class FeatureController extends Controller
      */
     public function destroy(string $id)
     {
-        feature::find($id)->delete();
+        team::find($id)->delete();
         toast('Delete Success','warning');
         return back();
     }
