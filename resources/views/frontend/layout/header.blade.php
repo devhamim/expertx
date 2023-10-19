@@ -34,7 +34,7 @@
                     <li class="active"><a class="nav-link" href="{{ url('/') }}">Home<i class="caret"></i></a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('about_us') }}">About Us</a></li>
                     <li class="nav-item "><a class="nav-link" href="{{ route('services') }}">Services</a></li>
-                    <li class="nav-item "><a class="nav-link" href="{{ route('protfolio') }}">Portfolio</a></li>
+                    <li class="nav-item "><a class="nav-link" href="{{ route('our.portfolio') }}">Portfolio</a></li>
                     <li class="nav-item dropdown"><a class="nav-link" href="{{ route('blog') }}">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('contect') }}">Contact</a></li>
                 </ul>

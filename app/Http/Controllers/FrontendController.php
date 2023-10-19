@@ -19,8 +19,8 @@ class FrontendController extends Controller
     function services(){
         return view('frontend.services');
     }
-    //protfolio
-    function protfolio(){
+    //our_portfolio
+    function our_portfolio(){
         return view('frontend.protfolio');
     } 
     //blog

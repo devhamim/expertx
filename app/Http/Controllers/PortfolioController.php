@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\feature;
+use App\Models\portfolio;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Str;
 
 class PortfolioController extends Controller
 {
@@ -11,7 +15,12 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        //
+        $feature_id = feature::where('status', 1)->get();
+        $portfolios = portfolio::all();
+        return view('backend.portfolio.index', [
+            'feature_id'=>$feature_id,
+            'portfolios'=>$portfolios,
+        ]);
     }
 
     /**
@@ -27,7 +36,32 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'feature_id'      =>'required',
+            'name'              =>'required',
+            'title'         =>'required',
+            'image'         =>'',
+            'client'         =>'',
+            'date'         =>'',
+            'value'         =>'',
+            'link'         =>'',
+            'description'   =>'required',
+            'completed'       =>'required',
+            'define'       =>'required',
+        ];
+
+        $validatesData = $request->validate($rules); 
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $extension = $image->getClientOriginalExtension();
+            $file_name = Str::random(5). rand(1000, 999999). '.'.$extension;
+            $image->move(public_path('uploads/portfolio'), $file_name);
+            $validatesData['image'] = $file_name;
+        }
+
+        portfolio::create($validatesData);
+        toast('Add Success','success');
+        return back();
     }
 
     /**
@@ -43,7 +77,12 @@ class PortfolioController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $feature_id = feature::where('status', 1)->get();
+        $portfolios = portfolio::find($id);
+        return view('backend.portfolio.edit', [
+            'portfolios'=>$portfolios,
+            'feature_id'=>$feature_id,
+        ]);
     }
 
     /**
@@ -51,7 +90,34 @@ class PortfolioController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $rules = [
+            'feature_id'      =>'required',
+            'name'      =>'required',
+            'title'         =>'required',
+            'image'         =>'required',
+            'client'         =>'',
+            'date'         =>'',
+            'value'         =>'',
+            'link'         =>'',
+            'description'   =>'required',
+            'completed'        =>'required',
+            'define'        =>'required',
+            'status'        =>'required',
+        ];
+
+        $validatesData = $request->validate($rules);
+
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $extension = $image->getClientOriginalExtension();
+            $file_name = Str::random(5). rand(1000, 999999). '.'.$extension;
+            $image->move(public_path('uploads/portfolio'), $file_name);
+            $validatesData['image'] = $file_name; 
+        }
+        
+        portfolio::where('id', $id)->update($validatesData);
+        toast('Update Success','success');   
+        return redirect()->route('portfolios.index');
     }
 
     /**
@@ -59,6 +125,8 @@ class PortfolioController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        portfolio::find($id)->delete();
+        toast('Delete Success','warning');
+        return back();
     }
 }
