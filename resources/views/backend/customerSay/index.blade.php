@@ -2,45 +2,36 @@
 
 @section('content')
 <div class="dashboard-breadcrumb mb-30">
-    <h2>Team</h2>
+    <h2>Customer Say</h2>
 </div>
 <div class="row g-4">
     <div class="col-xxl-4 col-md-5">
         <div class="panel">
             <div class="panel-header">
-                <h5>Add New Team</h5>
+                <h5>Add New Customer Say</h5>
             </div>
             <div class="panel-body">
-                <form action="{{ route('team.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('customerSay.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                     <div class="row g-3">
                         <div class="col-12">
                             <label class="form-label">Name</label>
-                            <input type="text" name="name" class="form-control form-control-sm @error('name') is-invalid @enderror">
+                            <input type="text" name="name" class="form-control form-control-sm @error('name') is-invalid @enderror" value="{{ old('name') }}">
                         </div>
                         <div class="col-12">
                             <label class="form-label">Position</label>
-                            <input type="text" name="post" class="form-control form-control-sm @error('post') is-invalid @enderror">
+                            <input type="text" name="post" class="form-control form-control-sm @error('post') is-invalid @enderror" value="{{ old('post') }}">
                         </div>
                         <div class="col-12">
                             <label class="form-label">Image</label>
-                            <input type="file" name="image" class="form-control form-control-sm @error('image') is-invalid @enderror">
+                            <input type="file" name="image" class="form-control form-control-sm @error('image') is-invalid @enderror" value="{{ old('image') }}">
                         </div>
                         <div class="col-12">
-                            <label class="form-label">Facebook</label>
-                            <input type="text" name="facebook" class="form-control form-control-sm">
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label">Instagram</label>
-                            <input type="text" name="instagram" class="form-control form-control-sm">
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label">LinkedIn</label>
-                            <input type="text" name="linkedin" class="form-control form-control-sm">
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label">GitHub</label>
-                            <input type="text" name="github" class="form-control form-control-sm">
+                            <label class="form-label">Description</label>
+                            <textarea rows="7" id="summernote" name="description" class="form-control form-control-sm @error('description') is-invalid @enderror">{{ old('description') }}</textarea>
+                            @error('description')
+                                <strong class="text-danger">{{ $message }}</strong>
+                            @enderror
                         </div>
                         <div class="col-12 d-flex justify-content-end">
                             <div class="btn-box">

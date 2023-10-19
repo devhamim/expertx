@@ -16,19 +16,19 @@
                     <div class="row g-3">
                         <div class="col-12">
                             <label class="form-label">Feature Name</label>
-                            <input type="text" name="name" class="form-control form-control-sm @error('name') is-invalid @enderror" >
+                            <input type="text" name="name" class="form-control form-control-sm @error('name') is-invalid @enderror" value="{{ old('name') }}">
                         </div>
                         <div class="col-sm-6">
                             <label class="form-label">Feature Icon</label>
-                            <input type="file" name="icon" class="form-control form-control-sm @error('icon') is-invalid @enderror">
+                            <input type="file" name="icon" class="form-control form-control-sm @error('icon') is-invalid @enderror" value="{{ old('icon') }}">
                         </div>
                         <div class="col-sm-6">
                             <label class="form-label">Feature Image</label>
-                            <input type="file" name="image" class="form-control form-control-sm @error('image') is-invalid @enderror">
+                            <input type="file" name="image" class="form-control form-control-sm @error('image') is-invalid @enderror" value="{{ old('image') }}">
                         </div>
                         <div class="col-12">
                             <label class="form-label">Description</label>
-                            <textarea rows="5" name="description" class="form-control form-control-sm"></textarea>
+                            <textarea rows="5" name="description" class="form-control form-control-sm">{{ old('description') }}</textarea>
                         </div>
                         <div class="col-12 d-flex justify-content-end">
                             <div class="btn-box">

@@ -16,31 +16,31 @@
                     <div class="row g-3">
                         <div class="col-12">
                             <label class="form-label">Name</label>
-                            <input type="text" name="name" class="form-control form-control-sm @error('name') is-invalid @enderror">
+                            <input type="text" name="name" class="form-control form-control-sm @error('name') is-invalid @enderror" value="{{ old('name') }}">
                         </div>
                         <div class="col-12">
                             <label class="form-label">Position</label>
-                            <input type="text" name="post" class="form-control form-control-sm @error('post') is-invalid @enderror">
+                            <input type="text" name="post" class="form-control form-control-sm @error('post') is-invalid @enderror" value="{{ old('post') }}">
                         </div>
                         <div class="col-12">
                             <label class="form-label">Image</label>
-                            <input type="file" name="image" class="form-control form-control-sm @error('image') is-invalid @enderror">
+                            <input type="file" name="image" class="form-control form-control-sm @error('image') is-invalid @enderror" value="{{ old('image') }}">
                         </div>
                         <div class="col-12">
                             <label class="form-label">Facebook</label>
-                            <input type="text" name="facebook" class="form-control form-control-sm">
+                            <input type="text" name="facebook" class="form-control form-control-sm" value="{{ old('facebook') }}">
                         </div>
                         <div class="col-12">
                             <label class="form-label">Instagram</label>
-                            <input type="text" name="instagram" class="form-control form-control-sm">
+                            <input type="text" name="instagram" class="form-control form-control-sm" value="{{ old('instagram') }}">
                         </div>
                         <div class="col-12">
                             <label class="form-label">LinkedIn</label>
-                            <input type="text" name="linkedin" class="form-control form-control-sm">
+                            <input type="text" name="linkedin" class="form-control form-control-sm" value="{{ old('linkedin') }}">
                         </div>
                         <div class="col-12">
                             <label class="form-label">GitHub</label>
-                            <input type="text" name="github" class="form-control form-control-sm">
+                            <input type="text" name="github" class="form-control form-control-sm" value="{{ old('github') }}">
                         </div>
                         <div class="col-12 d-flex justify-content-end">
                             <div class="btn-box">
