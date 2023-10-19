@@ -27,7 +27,7 @@
                         <a href="{{ route('customerSay.index') }}" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-cart-shopping-fast"></i></span> <span class="sidebar-txt">Customer Say</span></a>
                     </li>
                     <li class="sidebar-dropdown-item">
-                        <a href="dashboard-calendar.html" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-calendar"></i></span> <span class="sidebar-txt">Clients</span></a>
+                        <a href="{{ route('client.index') }}" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-calendar"></i></span> <span class="sidebar-txt">Clients</span></a>
                     </li>
                     <li class="sidebar-dropdown-item">
                         <a href="dashboard-invoices.html" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-file-invoice"></i></span> <span class="sidebar-txt">Invoices</span></a>

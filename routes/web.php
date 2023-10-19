@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\clientsController;
 use App\Http\Controllers\CustomerSayController;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\FrontendController;
@@ -41,5 +42,6 @@ Route::get('/home', [HomeController::class, 'index'])->name('index');
             'feature'      => FeatureController::class,
             'about'        => AboutController::class,
             'team'         => TeamController::class,
-            'customerSay'         => CustomerSayController::class,
+            'customerSay'  => CustomerSayController::class,
+            'client'       => clientsController::class,
         ]);
