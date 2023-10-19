@@ -37,6 +37,8 @@
         @include('backend.layouts.footer')
         <!-- footer end -->
     </div>
+
+    @include('sweetalert::alert')
     
     <script src="{{ asset('backend') }}/assets/vendor/js/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('backend') }}/assets/vendor/js/jquery.overlayScrollbars.min.js"></script>

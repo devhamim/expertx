@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\feature;
 use Illuminate\Http\Request;
+use Str;
 
 class FeatureController extends Controller
 {
@@ -11,7 +13,10 @@ class FeatureController extends Controller
      */
     public function index()
     {
-        return view('backend.feature.index');
+        $features = feature::all();
+        return view('backend.feature.index', [
+            'features'=>$features,
+        ]);
     }
 
     /**
@@ -25,9 +30,35 @@ class FeatureController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, feature $feature)
     {
-        //
+        $rules = [
+            'name'=>'required',
+            'icon'=>'',
+            'image'=>'',
+            'description'=>'',
+        ];
+
+        $validatesData = $request->validate($rules);
+
+        if($request->hasFile('icon')){
+            $image = $request->file('icon');
+            $extension = $image->getClientOriginalExtension();
+            $file_name = Str::random(5) . rand(1000, 999999) . '.' . $extension;
+            $image->move(public_path('uploads/feature'), $file_name);
+            $validatesData['icon'] = $file_name;
+        }
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $extension = $image->getClientOriginalExtension();
+            $file_name = Str::random(5) . rand(1000, 999999) . '.' . $extension;
+            $image->move(public_path('uploads/feature'), $file_name);
+            $validatesData['image'] = $file_name;
+        }
+
+        feature::create($validatesData);
+        toast('Add Success','success');   
+        return back();
     }
 
     /**
@@ -43,7 +74,10 @@ class FeatureController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $features = feature::find($id);
+        return view('backend.feature.edit', [
+            'features'=>$features,
+        ]);
     }
 
     /**
@@ -51,7 +85,34 @@ class FeatureController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $rules = [
+            'name'=>'required',
+            'icon'=>'',
+            'image'=>'',
+            'description'=>'',
+        ];
+
+        $validatesData = $request->validate($rules);
+
+        if($request->hasFile('icon')){
+            $image = $request->file('icon');
+            $extension = $image->getClientOriginalExtension();
+            $file_name = Str::random(5). rand(1000, 999999) .'.'.$extension;
+            $image->move(public_path('uploads/feature'), $file_name);
+            $validatesData['icon'] = $file_name;
+        }
+
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $extension = $image->getClientOriginalExtension();
+            $file_name = Str::random(5). rand(1000, 999999). '.'.$extension;
+            $image->move(public_path('uploads/feature'), $file_name);
+            $validatesData['image'] = $file_name; 
+        }
+
+        feature::where('id', $id)->update($validatesData);
+        toast('Update Success','success');   
+        return redirect()->route('feature.index');
     }
 
     /**
@@ -59,6 +120,8 @@ class FeatureController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        feature::find($id)->delete();
+        toast('Delete Success','warning');
+        return back();
     }
 }
