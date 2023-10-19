@@ -46,7 +46,7 @@
     <div class="col-xxl-8 col-md-7">
         <div class="panel">
             <div class="panel-header">
-                <h5>All Feature</h5>
+                <h5>All Customer Say</h5>
                 <div class="btn-box d-flex gap-2">
                     <div id="tableSearch"></div>
                     <div class="digi-dropdown dropdown">
@@ -74,33 +74,28 @@
                                 </div>
                             </th>
                             <th>Position</th>
-                            <th>Social</th>
+                            <th>Description</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($teams as $team)
+                        @foreach ($customerSays as $customerSay)
                             <tr>
                                 <td>
                                     <div class="table-category-card">
                                         <div class="part-icon">
-                                            <span><img src="{{ asset('uploads/team') }}/{{ $team->image }}" alt=""></span>
+                                            <span><img src="{{ asset('uploads/customersay') }}/{{ $customerSay->image }}" alt=""></span>
                                         </div>
                                         <div class="part-txt">
-                                            <span class="category-name">{{ $team->name }}</span>
+                                            <span class="category-name">{{ $customerSay->name }}</span>
                                         </div>
                                     </div>
                                 </td>
-                                <td><span class="table-dscr">{{ $team->post }}</span></td>
+                                <td><span class="table-dscr">{{ $customerSay->post }}</span></td>
+                                <td><span class="table-dscr">{!! $customerSay->description !!}</span><br></td>
                                 <td>
-                                    <span class="table-dscr">{{ $team->facebook }}</span><br>
-                                    <span class="table-dscr">{{ $team->instagram }}</span><br>
-                                    <span class="table-dscr">{{ $team->linkedin }}</span><br>
-                                    <span class="table-dscr">{{ $team->github }}</span><br>
-                                </td>
-                                <td>
-                                    @if ($team->status == 1)
+                                    @if ($customerSay->status == 1)
                                         <span class="table-dscr text-success">Active</span>
                                     @else
                                         <span class="table-dscr text-warning">Deactive</span>
@@ -108,8 +103,8 @@
                                 </td>
                                 <td>
                                     <div class="btn-box">
-                                        <a href="{{ route('team.edit', $team->id) }}"><i class="fa-light fa-pen-to-square"></i></a>
-                                        <form action="{{ route('team.destroy',  $team->id) }}" method="POST">
+                                        <a href="{{ route('customerSay.edit', $customerSay->id) }}"><i class="fa-light fa-pen-to-square"></i></a>
+                                        <form action="{{ route('customerSay.destroy',  $customerSay->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class=" border-0 mr-2">

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\customerSay;
 use Illuminate\Http\Request;
+use Str;
 
 class CustomerSayController extends Controller
 {
@@ -11,7 +13,10 @@ class CustomerSayController extends Controller
      */
     public function index()
     {
-        //
+        $customerSays = customerSay::all();
+        return view('backend.customerSay.index', [
+            'customerSays'=>$customerSays,
+        ]);
     }
 
     /**
@@ -27,7 +32,26 @@ class CustomerSayController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'name'=>'required',
+            'post'=>'required',
+            'image'=>'',
+            'description'=>'required',
+        ];
+
+        $validatesData = $request->validate($rules);
+
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $extension = $image->getClientOriginalExtension();
+            $file_name = Str::random(5). rand(1000, 999999). '.'.$extension;
+            $image->move(public_path('uploads/customersay'), $file_name);
+            $validatesData['image'] = $file_name; 
+        }
+
+        customerSay::create($validatesData);
+        toast('Add Success','success');   
+        return back();
     }
 
     /**
@@ -43,7 +67,10 @@ class CustomerSayController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $customerSays = customerSay::find($id);
+        return view('backend.customerSay.edit', [
+            'customerSays'=>$customerSays,
+        ]);
     }
 
     /**
@@ -51,7 +78,27 @@ class CustomerSayController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $rules = [
+            'name'=>'required',
+            'post'=>'required',
+            'image'=>'',
+            'description'=>'required',
+            'status'=>'',
+        ];
+
+        $validatesData = $request->validate($rules);
+
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $extension = $image->getClientOriginalExtension();
+            $file_name = Str::random(5). rand(1000, 999999). '.'.$extension;
+            $image->move(public_path('uploads/customersay'), $file_name);
+            $validatesData['image'] = $file_name; 
+        }
+
+        customerSay::where('id', $id)->update($validatesData);
+        toast('Update Success','success');   
+        return redirect()->route('customerSay.index');
     }
 
     /**
@@ -59,6 +106,8 @@ class CustomerSayController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        customerSay::find($id)->delete();
+        toast('Delete Success','warning');
+        return back();
     }
 }

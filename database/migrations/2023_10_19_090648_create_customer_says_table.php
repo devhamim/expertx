@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('customer_says', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('post');
+            $table->string('image')->nullable();
+            $table->longText('description');
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }
