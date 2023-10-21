@@ -94,13 +94,13 @@ class BlogController extends Controller
     public function update(Request $request, string $id)
     {
         $rules = [
-            'feature_id'      =>'required',
-            'title'         =>'required',
-            'image'         =>'',
-            'tags'         =>'array',
-            'description'   =>'required',
-            'define'       =>'required',
-            'status'=>'',
+            'feature_id'        =>'required',
+            'title'             =>'required',
+            'image'             =>'',
+            'tags'              =>'array',
+            'description'       =>'required',
+            'define'            =>'required',
+            'status'            =>'',
         ];
 
         $validatesData = $request->validate($rules);

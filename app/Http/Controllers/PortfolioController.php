@@ -37,17 +37,17 @@ class PortfolioController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'feature_id'      =>'required',
+            'feature_id'        =>'required',
             'name'              =>'required',
-            'title'         =>'required',
-            'image'         =>'',
-            'client'         =>'',
-            'date'         =>'',
-            'value'         =>'',
-            'link'         =>'',
-            'description'   =>'required',
-            'completed'       =>'required',
-            'define'       =>'required',
+            'title'             =>'required',
+            'image'             =>'',
+            'client'            =>'',
+            'date'              =>'',
+            'value'             =>'',
+            'link'              =>'',
+            'description'       =>'required',
+            'completed'         =>'required',
+            'define'            =>'required',
         ];
 
         $validatesData = $request->validate($rules); 

@@ -42,7 +42,7 @@
                         </div>
                         <div class="col-sm-6">
                             <label class="form-label" for="tags">Tags</label>
-                            <input type="text" id="tags"  class="form-control form-control-sm @error('tags') is-invalid @enderror" value="{{ old('tags') }}">
+                            <input type="text" name="tags" id="tags" class="form-control form-control-sm @error('tags') is-invalid @enderror" value="{{ old('tags') }}">
                         </div>
                         <div id="selected-tags">
                             <!-- Existing tags will be displayed here -->
@@ -123,7 +123,7 @@
             }
         }
     });
-
+    
     // Handle tag removal
     $('#selected-tags').on('click', '.remove-tag', function(e) {
         e.preventDefault();
