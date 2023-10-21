@@ -23,8 +23,8 @@ class FrontendController extends Controller
     function our_portfolio(){
         return view('frontend.protfolio');
     } 
-    //blog
-    function blog(){
+    //our_blog
+    function our_blog(){
         return view('frontend.blog');
     }
     //contect

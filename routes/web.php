@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\clientsController;
 use App\Http\Controllers\CustomerSayController;
 use App\Http\Controllers\FeatureController;
@@ -31,7 +32,7 @@ Route::get('/', [FrontendController::class, 'home']);
 Route::get('/about-us', [FrontendController::class, 'about_us'])->name('about_us');
 Route::get('/services', [FrontendController::class, 'services'])->name('services');
 Route::get('/our-portfolio', [FrontendController::class, 'our_portfolio'])->name('our.portfolio');
-Route::get('/blog', [FrontendController::class, 'blog'])->name('blog');
+Route::get('/our-blog', [FrontendController::class, 'our_blog'])->name('our.blog');
 Route::get('/contect', [FrontendController::class, 'contect'])->name('contect');
 
 Auth::routes();
@@ -45,5 +46,6 @@ Route::get('/home', [HomeController::class, 'index'])->name('index');
             'team'         => TeamController::class,
             'customerSay'  => CustomerSayController::class,
             'client'       => clientsController::class,
-            'portfolios'     => PortfolioController::class,
+            'portfolios'   => PortfolioController::class,
+            'blog'         => BlogController::class,
         ]);
