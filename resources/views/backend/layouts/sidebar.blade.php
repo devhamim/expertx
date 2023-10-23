@@ -30,6 +30,9 @@
                         <a href="{{ route('client.index') }}" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-calendar"></i></span> <span class="sidebar-txt">Clients</span></a>
                     </li>
                     <li class="sidebar-dropdown-item">
+                        <a href="{{ route('service.index') }}" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-file-invoice"></i></span> <span class="sidebar-txt">Service</span></a>
+                    </li>
+                    <li class="sidebar-dropdown-item">
                         <a href="{{ route('portfolios.index') }}" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-file-invoice"></i></span> <span class="sidebar-txt">Portfolio</span></a>
                     </li>
                     <li class="sidebar-dropdown-item">

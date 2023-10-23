@@ -8,6 +8,7 @@ use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
@@ -48,4 +49,5 @@ Route::get('/home', [HomeController::class, 'index'])->name('index');
             'client'       => clientsController::class,
             'portfolios'   => PortfolioController::class,
             'blog'         => BlogController::class,
+            'service'      => ServiceController::class,
         ]);
