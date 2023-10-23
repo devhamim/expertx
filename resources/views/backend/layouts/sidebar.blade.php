@@ -12,7 +12,7 @@
                 <a role="button" class="sidebar-link-group-title has-sub">Apps</a>
                 <ul class="sidebar-link-group">
                     <li class="sidebar-dropdown-item">
-                        <a href="dashboard-all-customer.html" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-user-group"></i></span> <span class="sidebar-txt">All Customer</span></a>
+                        <a href="{{ route('users.index') }}" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-user-group"></i></span> <span class="sidebar-txt">All User</span></a>
                     </li>
                     <li class="sidebar-dropdown-item">
                         <a href="{{ route('feature.index') }}" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-plus-square"></i></span> <span class="sidebar-txt">Feature</span></a>

@@ -13,6 +13,8 @@ use App\Http\Controllers\PrivacyPolicyController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserRegController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,6 +45,7 @@ Auth::routes();
 // backend
 Route::get('/home', [HomeController::class, 'index'])->name('index');
         Route::resources([
+            'users'      => UserController::class,
             'setting'      => SettingController::class,
             'feature'      => FeatureController::class,
             'about'        => AboutController::class,
