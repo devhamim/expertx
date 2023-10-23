@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="dashboard-breadcrumb mb-30">
-    <h2>Pricing</h2>
+    <h2>Service</h2>
 </div>
 <div class="row g-4">
     <div class="col-xxl-6 col-md-4 m-auto">
         <div class="panel">
             <div class="panel-header">
-                <h5>Edit Pricing</h5>
+                <h5>Edit Service</h5>
             </div>
             <div class="panel-body">
                 <form action="{{ route('service.update', $services->id) }}" method="POST" enctype="multipart/form-data">

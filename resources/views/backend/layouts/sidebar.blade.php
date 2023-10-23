@@ -33,6 +33,9 @@
                         <a href="{{ route('service.index') }}" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-file-invoice"></i></span> <span class="sidebar-txt">Service</span></a>
                     </li>
                     <li class="sidebar-dropdown-item">
+                        <a href="{{ route('pricing.index') }}" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-file-invoice"></i></span> <span class="sidebar-txt">Pricing</span></a>
+                    </li>
+                    <li class="sidebar-dropdown-item">
                         <a href="{{ route('portfolios.index') }}" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-file-invoice"></i></span> <span class="sidebar-txt">Portfolio</span></a>
                     </li>
                     <li class="sidebar-dropdown-item">
