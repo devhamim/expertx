@@ -41,6 +41,9 @@
                     <li class="sidebar-dropdown-item">
                         <a href="{{ route('blog.index') }}" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-user-plus"></i></span> <span class="sidebar-txt">Blog</span></a>
                     </li>
+                    <li class="sidebar-dropdown-item">
+                        <a href="{{ route('privacyPolicy.index') }}" class="sidebar-link"><span class="nav-icon"><i class="fa-light fa-user-plus"></i></span> <span class="sidebar-txt">Privacy Policy</span></a>
+                    </li>
                 </ul>
             </li>
             
