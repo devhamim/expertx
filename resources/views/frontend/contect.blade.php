@@ -27,19 +27,20 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="contact-form-content">
-                        <h2>Quick Contact Form</h2>
-                        <form action="#" class="contact-form row">
+                        <h2>Quick Contact Form</h2> 
+                        {{-- <form class="contact-form row" method="POST" action="{{ route('customerMessage.store') }}"> --}}
+                            {{-- @csrf --}}
                             <label class="col-md-6">
-                                <input type="text" class="contact-form-input" placeholder="Your Name*">
+                                <input type="text" name="name" class="contact-form-input" placeholder="Your Name*">
                             </label>
                             <label class="col-md-6">
-                                <input type="text" class="contact-form-input" placeholder="Phone*">
+                                <input type="text" name="phone" class="contact-form-input" placeholder="Phone*">
                             </label>
                             <label class="col-md-6">
-                                <input type="text" class="contact-form-input" placeholder="Your Email*">
+                                <input type="text" name="email" class="contact-form-input" placeholder="Your Email*">
                             </label>
                             <label class="col-md-6">
-                                <input type="text" class="contact-form-input" placeholder="Website*">
+                                <input type="text" name="subject" class="contact-form-input" placeholder="Website*">
                             </label>
                             <label class="col-md-12">
                                 <textarea name="message" id="contact-message" placeholder="Message here"></textarea>
@@ -47,35 +48,43 @@
                             <label class="col-md-12">
                                 <button type="submit" class="btn-m5">Send Now</button>
                             </label>
-                        </form>
+                        {{-- </form> --}}
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="our-contacts-right">
                         <h2>Our Contacts</h2>
                         <div class="our-contacts-history">
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                            <p> @if ( $settings->first()->about != null)
+                                    <p>{{ $settings->first()->about }}</p>
+                                @endif
+                            </p>
                         </div>
                         <div class="our-contacts-item media">
                             <i class="fas fa-map-marker-alt"></i>
                             <div class="our-contacts-item-text">
                                 <h3>Our Location</h3>
-                                <p>245 King Street, Touterie Victoria 8520 Australia</p>
+                                @if ($settings->first()->address != null)
+                                    <p>{{ $settings->first()->address }}</p>
+                                @endif
                             </div>
                         </div>
                         <div class="our-contacts-item media">
                             <i class="fas fa-phone-alt"></i>
                             <div class="our-contacts-item-text">
                                 <h3>Phone Number</h3>
-                                <p>008+01987-837625
-                                    <br> 008+01768-875432</p>
+                                @if ($settings->first()->number != null)
+                                    <p>{{ $settings->first()->number }}</p>
+                                @endif
                             </div>
                         </div>
                         <div class="our-contacts-item media">
                             <i class="fas fa-envelope"></i>
                             <div class="our-contacts-item-text">
                                 <h3>Email</h3>
-                                <p>sampleniketons@gmail.com</p>
+                                @if ($settings->first()->email != null)
+                                    <p>{{ $settings->first()->email }}</p>
+                                @endif
                             </div>
                         </div>
                         <div class="our-contacts-item media">

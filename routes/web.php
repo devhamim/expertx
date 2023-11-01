@@ -39,6 +39,7 @@ Route::get('/services', [FrontendController::class, 'services'])->name('services
 Route::get('/our-portfolio', [FrontendController::class, 'our_portfolio'])->name('our.portfolio');
 Route::get('/our-blog', [FrontendController::class, 'our_blog'])->name('our.blog');
 Route::get('/contect', [FrontendController::class, 'contect'])->name('contect');
+Route::get('/our/privacy/policy', [FrontendController::class, 'our_privacy_policy'])->name('our.privacy.policy');
 
 Auth::routes();
 

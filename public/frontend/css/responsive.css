@@ -291,11 +291,11 @@
     .navbar-nav .nav-item:active>.nav-link,
     .navbar-nav .nav-item:focus>.nav-link,
     .navbar-nav .nav-item:hover>.nav-link {
-        color: #0a8aff !important;
+        color: #C32127 !important;
     }
     .nav-item.active .caret,
     .nav-item:hover .caret {
-        border-top-color: #0a8aff !important;
+        border-top-color: #C32127 !important;
     }
     .hero-images img {
         width: 100%;

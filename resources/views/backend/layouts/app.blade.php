@@ -6,9 +6,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Revel eCommerce Admin</title>
+    @if ($setting->first()->title != null)
+        <title>{{ $setting->first()->title }}</title>
+    @endif
     
-    <link rel="shortcut icon" href="favicon.png">
+    @if ($setting->first()->favicon != null)
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('uploads/setting') }}/{{ $setting->first()->favicon }}">
+    @endif
     <link rel="stylesheet" href="{{ asset('backend') }}/assets/vendor/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('backend') }}/assets/vendor/css/OverlayScrollbars.min.css">
     <link rel="stylesheet" href="{{ asset('backend') }}/assets/vendor/css/jquery.dataTables.min.css">

@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\feature;
+use App\Models\privacyPolicy;
+use App\Models\setting;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
     //home
     function home(){
-        return view('frontend.home');
+        $features = feature::where('status', 1)->get();
+        return view('frontend.home', [
+            'features'=>$features,
+        ]);
     }
     
     //about_us
@@ -29,6 +35,17 @@ class FrontendController extends Controller
     }
     //contect
     function contect(){
-        return view('frontend.contect');
+        $settings = setting::all();
+        return view('frontend.contect', [
+            'settings'=>$settings,
+        ]);
+    }
+
+     //our_privacy_policy
+     function our_privacy_policy(){
+        $privacyPolicy = privacyPolicy::all();
+        return view('frontend.privacyPolicy', [
+            'privacyPolicy'=>$privacyPolicy,
+        ]);
     }
 }

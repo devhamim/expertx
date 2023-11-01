@@ -8,16 +8,21 @@
                     <div class="header-content">
                         <div class="contact-top-item ">
                             <i class="fa fa-phone-alt"></i>
-                            <span>+008 1234 56789</span>
+                            @if ($setting->first()->number != null)
+                            <span>{{ $setting->first()->number }}</span>
+                            @endif
                         </div>
                         <div class="contact-top-item ">
                             <i class="fa fa-envelope-open"></i>
-                            <span>supportroktim@gmail.com</span>
+                            @if ($setting->first()->email != null)
+                                
+                            <span>{{ $setting->first()->email }}</span>
+                            @endif
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <a href="#" class="btn-s2 header-top-right-btn">Contact Us</a>
+                    <a href="{{ route('contect') }}" class="btn-s2 header-top-right-btn">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -25,8 +30,10 @@
     <!-- Top Menu -->
     <nav class="navbar navbar-expand-lg bsnav bsnav-sticky bsnav-sticky-slide top-menu home-three-menu">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ url('/') }}">
+                @if ($setting->first()->logo != null)
                 <img style="max-width: 150px" src="{{ asset('uploads/setting') }}/{{ $setting->first()->logo }}" alt="">
+                @endif
             </a>
             <button class="navbar-toggler toggler-spring"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse justify-content-md-end">

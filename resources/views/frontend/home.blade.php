@@ -53,6 +53,7 @@
                 </div>
             </div>
             <div class="row pt-35">
+                @foreach ($features as $features)
                 <div class="col-lg-3 col-md-6 feature-border">
                     <div class="feature-dots-images1">
                         <img src="{{ asset('frontend') }}/img/home-6/red-dots.png" alt="">
@@ -70,7 +71,8 @@
                         <p>Naff at public school blog bobby Elizabeth super blo bamboozled blab.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 feature-border">
+                @endforeach
+                {{-- <div class="col-lg-3 col-md-6 feature-border">
                     <div class="feature-dots-images2">
                         <img src="{{ asset('frontend') }}/img/home-6/yellow-dots.png" alt="">
                         <img src="{{ asset('frontend') }}/img/home-6/red-dots.png" alt="">
@@ -117,7 +119,8 @@
                             <br> Development</h3>
                         <p>Naff at public school blog bobby Elizabeth super blo bamboozled blab.</p>
                     </div>
-                </div>
+                </div> --}}
+
             </div>
         </div>
     </section>

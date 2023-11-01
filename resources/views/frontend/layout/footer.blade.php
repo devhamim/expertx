@@ -7,11 +7,15 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-6 footer-col">
                         <div class="footer-content-item">
-                            <img style="max-width: 150px" class="mb-5" src="{{ asset('uploads/setting') }}/{{ $setting->first()->footer_logo }}" alt=""></a>
-                            <p>{{ $setting->first()->about }}</p>
+                            @if ($setting->first()->footer_logo != null)
+                                <img style="max-width: 150px" class="mb-5" src="{{ asset('uploads/setting') }}/{{ $setting->first()->footer_logo }}" alt=""></a>
+                            @endif
+                            @if ($setting->first()->about != null)
+                                <p>{{ $setting->first()->about }}</p>
+                            @endif
                             <ul>
-                                <li><a href="#"> Privacy policy </a></li>
-                                <li><a href="#">Terms and Conditions</a></li>
+                                <li><a href="{{ route('our.privacy.policy') }}"> Privacy policy </a></li>
+                                {{-- <li><a href="#">Terms and Conditions</a></li> --}}
                             </ul>
                         </div>
                     </div>
@@ -44,10 +48,16 @@
                     <div class="col-lg-3 col-md-6 footer-col">
                         <div class="footer-content-item">
                             <a class="footer-widget-title">Main Office</a>
-                            <p>4012 North 9th Avenue,Pensacola, FL 32503, New York</p>
+                            @if ($setting->first()->address != null)
+                                <p>{{ $setting->first()->address }}</p>
+                            @endif
                             <div class="footer-contact">
-                                Call: +1 965 047 658 23
-                                <br>Email: niketons@gmail.com
+                                @if ($setting->first()->number != null)
+                                Call: {{ $setting->first()->number }}
+                                @endif
+                                @if ($setting->first()->email != null)
+                                <br>Email: {{ $setting->first()->email }}
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -59,18 +69,19 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="copy-right-text">
-                            <p>Copyrights © 2020. All rights reserved by Pointtheme</p>
+                            <@if ($setting->first()->footer != null)
+                                <p>{{ $setting->first()->footer }}  Design & Development by <a href="https://nugortech.com/" class="text-primary">Nugortechit</a></p>
+                            @endif
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="footer-social text-right">
                             <div class="footer-social-title">Follow us: </div>
                             <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="{{ $setting->first()->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="{{ $setting->first()->twitter }}"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="{{ $setting->first()->instagram }}"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="{{ $setting->first()->linkedin }}"><i class="fab fa-linkedin-in"></i></a></li>
                             </ul>
                         </div>
                     </div>

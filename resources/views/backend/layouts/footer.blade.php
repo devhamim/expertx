@@ -1,3 +1,3 @@
 <div class="footer">
-    <p>Copyright© <script>document.write(new Date().getFullYear())</script> All Rights Reserved By <span class="text-primary">Revel</span></p>
-</div>
+    <p>{{ $setting->first()->footer }} Design & Development by<a href="https://nugortech.com/" class="text-primary">Nugortechit</a></p>
+ </div>

@@ -131,7 +131,7 @@
 }
 
 .contact-top-item i {
-    color: #0a8aff;
+    color: #C32127;
     margin-right: 6px;
 }
 
@@ -290,7 +290,7 @@
 }
 
 .menu-one ul ul li a:hover::before {
-    background-color: #0a8aff;
+    background-color: #C32127;
 }
 
 .menu-one .navbar-nav li.active>a,
@@ -298,12 +298,12 @@
 .menu-one .navbar-nav li:active>a,
 .menu-one .navbar-nav li:focus>a,
 .menu-one .navbar-nav li:hover>a {
-    color: #0a8aff !important;
+    color: #C32127 !important;
 }
 
 .menu-one .nav-item.active .caret,
 .menu-one li:hover .caret {
-    border-top-color: #0a8aff;
+    border-top-color: #C32127;
 }
 
 .top-menu .caret {
@@ -335,7 +335,7 @@
     border-radius: 4px;
     -webkit-filter: drop-shadow(0 0 13.5px rgba(0, 0, 0, 0.12));
     filter: drop-shadow(0 0 13.5px rgba(0, 0, 0, 0.12));
-    background-color: #0a8aff;
+    background-color: #C32127;
     border: 0;
     color: #fff;
 }
@@ -682,7 +682,7 @@
 }
 
 .hero-title span {
-    color: #0a8aff;
+    color: #C32127;
 }
 
 .hero-left-content p {}
@@ -1280,7 +1280,7 @@
 }
 
 .about-hind-text:hover h3 {
-    color: #0a8aff;
+    color: #C32127;
 }
 
 .about-hind-text p {
@@ -1513,7 +1513,7 @@
 .skills {
     height: 2px;
     width: 0px;
-    background: #0a8aff;
+    background: #C32127;
     position: relative;
     overflow: unset !important;
 }
@@ -1528,7 +1528,7 @@
     border-radius: 6px;
     -webkit-filter: drop-shadow(0 0 5.5px rgba(0, 0, 0, 0.25));
     filter: drop-shadow(0 0 5.5px rgba(0, 0, 0, 0.25));
-    background-color: #0a8aff;
+    background-color: #C32127;
 }
 
 .work-img {
@@ -1654,7 +1654,7 @@
 }
 
 .services-item:hover {
-    border-bottom: 3px solid #0a8aff;
+    border-bottom: 3px solid #C32127;
 }
 
 
@@ -2345,7 +2345,7 @@
 }
 
 .portfolio-hover-icon li a {
-    color: #0a8aff;
+    color: #C32127;
     font-size: 25px;
     margin: 0 8px;
     background-color: #fff;
@@ -2383,7 +2383,7 @@
 .portfolio-text {
     text-align: center;
     padding: 22px 0;
-    background-color: #0a8aff;
+    background-color: #C32127;
 }
 
 .portfolio-text h3 {
@@ -2500,7 +2500,7 @@
 }
 
 .portfolio-colum4-item-text li a {
-    color: #0a8aff;
+    color: #C32127;
     font-size: 25px;
     margin: 0 8px;
     background-color: #fff;
@@ -2701,7 +2701,7 @@
     filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.07));
     background-color: #ffffff;
     margin-top: 65px;
-    border: 1px solid #0a8aff;
+    border: 1px solid #C32127;
 }
 
 .pricing-tabs li a {
@@ -2715,7 +2715,7 @@
 .pricing-tabs li a.active {
     width: 150px;
     border-radius: 32px;
-    background-color: #0a8aff;
+    background-color: #C32127;
     color: #fff;
 }
 
@@ -2733,7 +2733,7 @@
 }
 
 .pricing-item:hover {
-    border-left: 4px solid #0a8aff;
+    border-left: 4px solid #C32127;
     -webkit-filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.07));
     filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.07));
 }
@@ -3503,7 +3503,7 @@ text.ct-label {
     z-index: 3;
     width: 0;
     height: 0;
-    border-left: 22px solid #0a8aff;
+    border-left: 22px solid #C32127;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
     border-radius: 5px;
@@ -3748,12 +3748,12 @@ text.ct-label {
 }
 
 .testimonial-item-text hr {
-    border-top: 1px solid #0a8aff;
+    border-top: 1px solid #C32127;
     margin: 30px 0 20px;
 }
 
 .testimonial-item-text h3 {
-    color: #0a8aff;
+    color: #C32127;
     font-weight: 600;
     padding-bottom: 10px;
 }
@@ -3772,7 +3772,7 @@ text.ct-label {
 
 .testimonial-slider .owl-dots .owl-dot.active span,
 .testimonial-slider .owl-dots .owl-dot:hover span {
-    background: #0a8aff;
+    background: #C32127;
 }
 
 .testimonial-slider .owl-nav.disabled+.owl-dots {
@@ -4222,7 +4222,7 @@ button {
 
 
 /* .testimonial-item-text hr {
-    border-top: 1px solid #0a8aff;
+    border-top: 1px solid #C32127;
     margin: 30px 0 20px;
 } */
 
@@ -4391,7 +4391,7 @@ button {
     filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.07));
     background-color: #fff;
     padding: 70px 30px;
-    border-top: 8px solid #0a8aff;
+    border-top: 8px solid #C32127;
 }
 
 .analysis-report-right-title {
@@ -4406,7 +4406,7 @@ button {
 }
 
 .analysis-report-right-title h3 span {
-    color: #0a8aff;
+    color: #C32127;
 }
 
 .analysis-report-right-title p {
@@ -4561,7 +4561,7 @@ button {
 }
 
 .blog-img {
-    background-color: #0a8aff;
+    background-color: #C32127;
     overflow: hidden;
 }
 
@@ -4595,7 +4595,7 @@ button {
 }
 
 .blog-text ul li i {
-    color: #0a8aff;
+    color: #C32127;
     margin-right: 5px;
 }
 
@@ -4609,7 +4609,7 @@ button {
 }
 
 .blog-item:hover .blog-title {
-    color: #0a8aff;
+    color: #C32127;
 }
 
 .blog-btn {
@@ -4622,7 +4622,7 @@ button {
 }
 
 .blog-btn:hover {
-    color: #0a8aff;
+    color: #C32127;
     letter-spacing: 2px;
 }
 
@@ -4948,7 +4948,7 @@ button {
     width: 100%;
     top: 100%;
     left: 0;
-    background: #0922c1b2;
+    background: #c3212782;
     opacity: 0;
     visibility: hidden;
     -webkit-transition: .3s;
@@ -5601,7 +5601,7 @@ button {
     top: 0;
     width: 100%;
     height: 100%;
-    background: #0922c1c7;
+    background: #c3212782;
 }
 
 
@@ -6566,7 +6566,7 @@ button {
     width: 100%;
     height: 100%;
     background-image: url(../img/testimonial-bg.png);
-    background-color: #0a8aff;
+    background-color: #C32127;
     z-index: -1;
 }
 
@@ -7100,7 +7100,7 @@ button {
 }
 
 .scroll-top:hover {
-    background: #0a8aff;
+    background: #C32127;
 }
 
 @media only screen and (max-width: 479px) {

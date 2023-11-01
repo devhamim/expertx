@@ -46,11 +46,11 @@
                     <ul class="dropdown-menu" aria-labelledby="profileDropdown">
                         <li>
                             <div class="dropdown-txt text-center">
-                                <p class="mb-0">Shaikh Abu Dardah</p>
-                                <span class="d-block">CEO & Founder</span>
+                                <p class="mb-0">{{ $users->first()->name }}</p>
+                                <span class="d-block">{{ $users->first()->email }}</span>
                             </div>
                         </li>
-                        <li><a class="dropdown-item" href="dashboard-view-profile.html"><span class="dropdown-icon"><i class="fa-regular fa-circle-user"></i></span> Profile</a></li>
+                        {{-- <li><a class="dropdown-item" href="dashboard-view-profile.html"><span class="dropdown-icon"><i class="fa-regular fa-circle-user"></i></span> Profile</a></li> --}}
                       
                         <li><a class="dropdown-item" href="{{ route('setting.index') }}"><span class="dropdown-icon"><i class="fa-regular fa-gear"></i></span> Settings</a></li>
                         <li>
